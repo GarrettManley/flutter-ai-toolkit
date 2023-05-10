@@ -55,6 +55,12 @@ abstract class FlutterFlowTheme {
   late Color info;
 
   late Color lineColor;
+  late Color primaryBtnText;
+  late Color outerSpace;
+  late Color wenge;
+  late Color paynesGray;
+  late Color verdigris;
+  late Color vividSkyBlue;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -127,10 +133,10 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
-  late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFFFF5963);
+  late Color primary = const Color(0xFF404E4D);
+  late Color secondary = const Color(0xFF63595C);
+  late Color tertiary = const Color(0xFF646881);
+  late Color alternate = const Color(0xFF62BEC1);
   late Color primaryText = const Color(0xFF101213);
   late Color secondaryText = const Color(0xFF57636C);
   late Color primaryBackground = const Color(0xFFF1F4F8);
@@ -145,6 +151,12 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color info = const Color(0xFF1C4494);
 
   late Color lineColor = Color(0xFFE0E3E7);
+  late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color outerSpace = Color(0xFF404E4D);
+  late Color wenge = Color(0xFF63595C);
+  late Color paynesGray = Color(0xFF646881);
+  late Color verdigris = Color(0xFF62BEC1);
+  late Color vividSkyBlue = Color(0xFF5AD2F4);
 }
 
 abstract class Typography {
@@ -300,7 +312,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
+  late Color primary = const Color(0xFF404E4D);
   late Color secondary = const Color(0xFF39D2C0);
   late Color tertiary = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFFFF5963);
@@ -318,6 +330,12 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color info = const Color(0xFF1C4494);
 
   late Color lineColor = Color(0xFF22282F);
+  late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color outerSpace = Color(0xFF404E4D);
+  late Color wenge = Color(0xFF63595C);
+  late Color paynesGray = Color(0xFF646881);
+  late Color verdigris = Color(0xFF62BEC1);
+  late Color vividSkyBlue = Color(0xFF5AD2F4);
 }
 
 extension TextStyleHelper on TextStyle {

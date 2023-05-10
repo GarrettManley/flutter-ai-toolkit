@@ -23,6 +23,8 @@ class _HomeWidgetState extends State<HomeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomeModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Home'});
   }
 
   @override
@@ -44,7 +46,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Page Title',
+            'Home Page',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Poppins',
                   color: Colors.white,

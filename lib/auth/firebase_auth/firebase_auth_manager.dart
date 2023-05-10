@@ -34,6 +34,7 @@ class FirebaseAuthManager extends AuthManager
 
   @override
   Future signOut() {
+    logFirebaseEvent("SIGN_OUT");
     return FirebaseAuth.instance.signOut();
   }
 
@@ -44,6 +45,7 @@ class FirebaseAuthManager extends AuthManager
         print('Error: delete user attempted with no logged in user!');
         return;
       }
+      logFirebaseEvent("DELETE_USER");
       await currentUser?.delete();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'requires-recent-login') {
@@ -198,6 +200,7 @@ class FirebaseAuthManager extends AuthManager
   ) async {
     try {
       final userCredential = await signInFunc();
+      logFirebaseAuthEvent(userCredential?.user, authProvider);
       if (userCredential?.user != null) {
         await maybeCreateUser(userCredential!.user!);
       }

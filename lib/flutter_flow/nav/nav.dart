@@ -69,23 +69,35 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? HomeWidget() : OnboardingWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomeWidget() : OnboardingWidget(),
-        ),
-        FFRoute(
-          name: 'Onboarding',
-          path: '/onboarding',
-          builder: (context, params) => OnboardingWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
+        ),
+        FFRoute(
+          name: 'Login',
+          path: '/login',
+          builder: (context, params) => LoginWidget(),
+        ),
+        FFRoute(
+          name: 'Signup',
+          path: '/signup',
+          builder: (context, params) => SignupWidget(),
+        ),
+        FFRoute(
+          name: 'Chat',
+          path: '/chat',
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Chat') : ChatWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
@@ -254,7 +266,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/onboarding';
+            return '/login';
           }
           return null;
         },
