@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/components/authentication/input_email/input_email_widget.dart';
 import '/components/authentication/input_password/input_password_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -49,6 +50,22 @@ class _SignupWidgetState extends State<SignupWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              logFirebaseEvent('SIGNUP_arrow_back_rounded_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
+              context.pop();
+            },
+          ),
           title: Text(
             'Create Account',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -63,33 +80,41 @@ class _SignupWidgetState extends State<SignupWidget> {
         ),
         body: SafeArea(
           child: Container(
-            width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   FlutterFlowTheme.of(context).primary,
-                  FlutterFlowTheme.of(context).secondary
+                  FlutterFlowTheme.of(context).tertiary
                 ],
                 stops: [0.0, 1.0],
-                begin: AlignmentDirectional(0.0, -1.0),
-                end: AlignmentDirectional(0, 1.0),
+                begin: AlignmentDirectional(0.87, -1.0),
+                end: AlignmentDirectional(-0.87, 1.0),
               ),
             ),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 100),
-                    curve: Curves.easeInOut,
+                  child: Container(
                     width: double.infinity,
+                    constraints: BoxConstraints(
+                      maxWidth: 570.0,
+                    ),
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(2.0),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 4.0,
+                          color: Color(0x33000000),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(

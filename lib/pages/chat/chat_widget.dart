@@ -58,9 +58,20 @@ class _ChatWidgetState extends State<ChatWidget> {
           elevation: 2.0,
         ),
         body: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [],
+          child: Container(
+            height: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  FlutterFlowTheme.of(context).primary,
+                  FlutterFlowTheme.of(context).tertiary
+                ],
+                stops: [0.0, 1.0],
+                begin: AlignmentDirectional(0.87, -1.0),
+                end: AlignmentDirectional(-0.87, 1.0),
+              ),
+            ),
+            alignment: AlignmentDirectional(0.0, -1.0),
           ),
         ),
       ),

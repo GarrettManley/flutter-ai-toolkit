@@ -80,6 +80,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Home',
           path: '/home',
+          requireAuth: true,
           builder: (context, params) =>
               params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         ),
@@ -96,6 +97,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Chat',
           path: '/chat',
+          requireAuth: true,
           builder: (context, params) =>
               params.isEmpty ? NavBarPage(initialPage: 'Chat') : ChatWidget(),
         )

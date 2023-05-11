@@ -1,5 +1,7 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -58,9 +60,70 @@ class _HomeWidgetState extends State<HomeWidget> {
           elevation: 2.0,
         ),
         body: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [],
+          child: Container(
+            height: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  FlutterFlowTheme.of(context).primary,
+                  FlutterFlowTheme.of(context).tertiary
+                ],
+                stops: [0.0, 1.0],
+                begin: AlignmentDirectional(0.87, -1.0),
+                end: AlignmentDirectional(-0.87, 1.0),
+              ),
+            ),
+            alignment: AlignmentDirectional(0.0, -1.0),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        logFirebaseEvent('HOME_PAGE_LOGOUT_BTN_ON_TAP');
+                        logFirebaseEvent('Button_auth');
+                        GoRouter.of(context).prepareAuthEvent();
+                        await authManager.signOut();
+                        GoRouter.of(context).clearRedirectLocation();
+
+                        logFirebaseEvent('Button_navigate_to');
+
+                        context.goNamedAuth('Home', mounted);
+                      },
+                      text: 'Logout',
+                      options: FFButtonOptions(
+                        width: double.infinity,
+                        height: 44.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                        elevation: 3.0,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
