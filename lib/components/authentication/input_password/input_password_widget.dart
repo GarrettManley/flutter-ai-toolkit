@@ -28,6 +28,7 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
     _model = createModel(context, () => InputPasswordModel());
 
     _model.passwordController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

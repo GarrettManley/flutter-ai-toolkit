@@ -28,6 +28,7 @@ class _InputEmailWidgetState extends State<InputEmailWidget> {
     _model = createModel(context, () => InputEmailModel());
 
     _model.emailAddressController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

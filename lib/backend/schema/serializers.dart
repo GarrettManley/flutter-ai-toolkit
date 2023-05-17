@@ -17,6 +17,8 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   UsersRecord,
   ChatsRecord,
   ChatMessagesRecord,
+  MessageStruct,
+  ChatStruct,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

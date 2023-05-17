@@ -72,6 +72,8 @@ class _LoginWidgetState extends State<LoginWidget>
     _model = createModel(context, () => LoginModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Login'});
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

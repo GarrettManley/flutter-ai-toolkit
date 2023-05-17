@@ -30,6 +30,7 @@ class _SignupWidgetState extends State<SignupWidget> {
     _model = createModel(context, () => SignupModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Signup'});
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
