@@ -11,13 +11,20 @@ import '../backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../auth/firebase_auth/auth_util.dart';
 
-dynamic parseChatJson(List<dynamic> previous) {
-  return null;
+dynamic createChatRequest(List<dynamic>? messages) {
+  return messages;
 }
 
-dynamic userMessageToMessagesJSON(
-  String newMessage,
-  String? name,
+dynamic createMessageJson(
+  String content,
+  String role,
 ) {
-  return {'role': 'user', 'content': newMessage, 'name': name};
+  return {'role': role, 'content': content};
+}
+
+dynamic openAPICreateMessage(
+  String? role,
+  String? content,
+) {
+  return {'role': role, 'content': content};
 }

@@ -70,7 +70,7 @@ class _SignupWidgetState extends State<SignupWidget> {
           title: Text(
             'Create Account',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Poppins',
+                  fontFamily: 'Work Sans',
                   color: Colors.white,
                   fontSize: 22.0,
                 ),

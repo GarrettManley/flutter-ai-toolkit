@@ -137,7 +137,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color secondary = const Color(0xFF63595C);
   late Color tertiary = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFF62BEC1);
-  late Color primaryText = const Color(0xFF101213);
+  late Color primaryText = const Color(0xFFFFFFFF);
   late Color secondaryText = const Color(0xFF57636C);
   late Color primaryBackground = const Color(0xFFF1F4F8);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
@@ -197,107 +197,107 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Poppins';
+  String get displayLargeFamily => 'Work Sans';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 57.0,
       );
-  String get displayMediumFamily => 'Poppins';
+  String get displayMediumFamily => 'Work Sans';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 45.0,
       );
-  String get displaySmallFamily => 'Poppins';
+  String get displaySmallFamily => 'Work Sans';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Poppins';
+  String get headlineLargeFamily => 'Work Sans';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Poppins';
+  String get headlineMediumFamily => 'Work Sans';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 28.0,
       );
-  String get headlineSmallFamily => 'Poppins';
+  String get headlineSmallFamily => 'Work Sans';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Poppins';
+  String get titleLargeFamily => 'Work Sans';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Poppins';
+  String get titleMediumFamily => 'Work Sans';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get titleSmallFamily => 'Poppins';
+  String get titleSmallFamily => 'Work Sans';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelLargeFamily => 'Poppins';
+  String get labelLargeFamily => 'Work Sans';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelMediumFamily => 'Poppins';
+  String get labelMediumFamily => 'Work Sans';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get labelSmallFamily => 'Poppins';
+  String get labelSmallFamily => 'Work Sans';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 11.0,
       );
-  String get bodyLargeFamily => 'Poppins';
+  String get bodyLargeFamily => 'Work Sans';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Poppins';
+  String get bodyMediumFamily => 'Work Sans';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Poppins';
+  String get bodySmallFamily => 'Work Sans';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Work Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

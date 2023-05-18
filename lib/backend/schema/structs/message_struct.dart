@@ -10,9 +10,9 @@ abstract class MessageStruct
     implements Built<MessageStruct, MessageStructBuilder> {
   static Serializer<MessageStruct> get serializer => _$messageStructSerializer;
 
-  String? get content;
-
   String? get role;
+
+  String? get content;
 
   String? get name;
 
@@ -20,8 +20,8 @@ abstract class MessageStruct
   FirestoreUtilData get firestoreUtilData;
 
   static void _initializeBuilder(MessageStructBuilder builder) => builder
-    ..content = ''
     ..role = ''
+    ..content = ''
     ..name = ''
     ..firestoreUtilData = FirestoreUtilData();
 
@@ -31,8 +31,8 @@ abstract class MessageStruct
 }
 
 MessageStruct createMessageStruct({
-  String? content,
   String? role,
+  String? content,
   String? name,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
@@ -41,8 +41,8 @@ MessageStruct createMessageStruct({
 }) =>
     MessageStruct(
       (m) => m
-        ..content = content
         ..role = role
+        ..content = content
         ..name = name
         ..firestoreUtilData = FirestoreUtilData(
           clearUnsetFields: clearUnsetFields,

@@ -15,7 +15,7 @@ class OpenAIGroup {
   static String baseUrl = 'https://api.openai.com/v1';
   static Map<String, String> headers = {
     'Authorization':
-        'Bearer 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',
+        'Bearer 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',
     'Content-Type': 'application/json',
   };
   static ChatCall chatCall = ChatCall();
@@ -47,6 +47,19 @@ class ChatCall {
       cache: false,
     );
   }
+
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.choices[:].message''',
+      );
+  dynamic role(dynamic response) => getJsonField(
+        response,
+        r'''$.choices[:].message.role''',
+      );
+  dynamic content(dynamic response) => getJsonField(
+        response,
+        r'''$.choices[:].message.content''',
+      );
 }
 
 /// End Open AI Group Code

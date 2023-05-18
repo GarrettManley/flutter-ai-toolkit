@@ -24,17 +24,17 @@ class _$MessageStructSerializer implements StructuredSerializer<MessageStruct> {
           specifiedType: const FullType(FirestoreUtilData)),
     ];
     Object? value;
-    value = object.content;
-    if (value != null) {
-      result
-        ..add('content')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.role;
     if (value != null) {
       result
         ..add('role')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.content;
+    if (value != null) {
+      result
+        ..add('content')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -60,12 +60,12 @@ class _$MessageStructSerializer implements StructuredSerializer<MessageStruct> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'content':
-          result.content = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'role':
           result.role = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'content':
+          result.content = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'name':
@@ -86,9 +86,9 @@ class _$MessageStructSerializer implements StructuredSerializer<MessageStruct> {
 
 class _$MessageStruct extends MessageStruct {
   @override
-  final String? content;
-  @override
   final String? role;
+  @override
+  final String? content;
   @override
   final String? name;
   @override
@@ -98,7 +98,7 @@ class _$MessageStruct extends MessageStruct {
       (new MessageStructBuilder()..update(updates))._build();
 
   _$MessageStruct._(
-      {this.content, this.role, this.name, required this.firestoreUtilData})
+      {this.role, this.content, this.name, required this.firestoreUtilData})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         firestoreUtilData, r'MessageStruct', 'firestoreUtilData');
@@ -115,8 +115,8 @@ class _$MessageStruct extends MessageStruct {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MessageStruct &&
-        content == other.content &&
         role == other.role &&
+        content == other.content &&
         name == other.name &&
         firestoreUtilData == other.firestoreUtilData;
   }
@@ -124,8 +124,8 @@ class _$MessageStruct extends MessageStruct {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, role.hashCode);
+    _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, firestoreUtilData.hashCode);
     _$hash = $jf(_$hash);
@@ -135,8 +135,8 @@ class _$MessageStruct extends MessageStruct {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MessageStruct')
-          ..add('content', content)
           ..add('role', role)
+          ..add('content', content)
           ..add('name', name)
           ..add('firestoreUtilData', firestoreUtilData))
         .toString();
@@ -147,13 +147,13 @@ class MessageStructBuilder
     implements Builder<MessageStruct, MessageStructBuilder> {
   _$MessageStruct? _$v;
 
-  String? _content;
-  String? get content => _$this._content;
-  set content(String? content) => _$this._content = content;
-
   String? _role;
   String? get role => _$this._role;
   set role(String? role) => _$this._role = role;
+
+  String? _content;
+  String? get content => _$this._content;
+  set content(String? content) => _$this._content = content;
 
   String? _name;
   String? get name => _$this._name;
@@ -171,8 +171,8 @@ class MessageStructBuilder
   MessageStructBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _content = $v.content;
       _role = $v.role;
+      _content = $v.content;
       _name = $v.name;
       _firestoreUtilData = $v.firestoreUtilData;
       _$v = null;
@@ -197,8 +197,8 @@ class MessageStructBuilder
   _$MessageStruct _build() {
     final _$result = _$v ??
         new _$MessageStruct._(
-            content: content,
             role: role,
+            content: content,
             name: name,
             firestoreUtilData: BuiltValueNullFieldError.checkNotNull(
                 firestoreUtilData, r'MessageStruct', 'firestoreUtilData'));

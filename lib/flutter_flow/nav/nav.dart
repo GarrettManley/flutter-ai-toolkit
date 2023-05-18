@@ -98,11 +98,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Chat',
           path: '/chat',
           requireAuth: true,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Chat')
-              : ChatWidget(
-                  chatMessages: params.getParam('chatMessages', ParamType.JSON),
-                ),
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Chat') : ChatWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
